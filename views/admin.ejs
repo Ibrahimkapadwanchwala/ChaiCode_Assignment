@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" class="w-full h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="w-full h-full bg-zinc-800 text-white p-10">
+    <% if (added) { %>
+        <div class="alreadyExists bg-green-600 opacity-50 w-[30%] border-2 border-red-300 flex justify-center text-2xl items-center h-[10%] absolute top-0 absolute right-0 p-5">
+           Restaurant added sucessfully!!!
+        </div>
+      <% } %>
+    <h1 class="text-4xl uppercase mb-10">Admin page</h1>
+      <a href="/admin/addRestaurant" class="mt-10 bg-blue-500 py-3 px-3 rounded-md text-2xl mr-5">Add restaurants</a>
+      <a href="/admin/deleteRestaurant" class="mt-10 bg-blue-500 py-3 px-3 rounded-md text-2xl ml-5">Delete restaurants</a>
+      <script>
+        setTimeout(()=>{
+            const div=document.querySelector('.alreadyExists');
+            div.style.display="none"
+        },5000)
+    </script>
+</body>
+</html>

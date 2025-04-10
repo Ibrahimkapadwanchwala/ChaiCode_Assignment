@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full w-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body
+    class="bg-zinc-800 h-full w-full text-white flex items-center justify-center flex-col"
+  >
+ 
+    <h1 class="uppercase text-4xl mb-5">Add Restaurant</h1>
+    <div class="form">
+      <form
+        action="/admin/addRestaurant"
+        method="post"
+        class="border-2 border-zinc-600 rounded-md p-10 flex flex-col"
+      >
+        <label for="name">Enter name of restaurant:</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Name"
+          class="mb-5 border-2 border-zinc-600 rounded-md px-3 py-4"
+        />
+        <label for="location">Enter location:</label>
+        <input
+          type="text"
+          name="location"
+          id="location"
+          placeholder="Location"
+          class="mb-5 border-2 border-zinc-600 rounded-md px-3 py-4"
+        />
+        <label for="cuisine">Enter cuisine:</label>
+        <input
+          type="text"
+          name="cuisine"
+          id="cuisine"
+          placeholder="Cuisine"
+          class="mb-5 border-2 border-zinc-600 rounded-md px-3 py-4"
+        />
+        <label for="capacity">Enter capacity:</label>
+        <input
+          type="number"
+          name="capacity"
+          id="capacity"
+          placeholder="capacity"
+          class="mb-5 border-2 border-zinc-600 rounded-md px-3 py-4"
+        />
+        <input
+          type="submit"
+          value="Add Restaurant"
+          class="mb-5 py-4 bg-blue-500 rounded-md mt-5"
+        />
+      </form>
+    </div>
+   
+  </body>
+</html>

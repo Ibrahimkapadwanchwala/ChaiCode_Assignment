@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" class="w-full h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurants page</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="w-full h-full bg-zinc-800 text-white flex flex-col items-center">
+    <form action="/reservation/search" method="GET" class="mb-10 flex gap-4">
+      <input
+        type="text"
+        name="query"
+        placeholder="Search by restaurant name..."
+        class="px-4 py-2 text-black rounded text-white placeholder:text-white px-4 w-60 border-2 border-zinc-600"
+        required
+        class=""
+        
+      />
+      <button type="submit" class="bg-blue-500 px-4 py-2 rounded">Search</button>
+      
+    </form>
+    
+      <% if (reservationSucessfull) { %>
+        <div class="reservationSucessfull bg-green-600 opacity-50 w-[30%] border-2 border-red-300 flex justify-center text-2xl items-center h-[10%] absolute top-0 absolute right-0 p-5">
+            Table booked sucessfully!!!
+        </div>
+        <% } %>
+        <div class="absolute left-0 ">
+          <a href="/reservations" class="text-2xl bg-blue-500 rounded-md px-3 py-5 ml-5 mr-5 ">My reservations</a>
+        <a href="/user/logout" class="text-2xl bg-blue-500 rounded-md px-3 py-4 absolute ml-5">Logout</a>
+        </div>
+    <h1 class="text-4xl uppercase mt-10 font-bold">Restaurants page</h1>
+    <% if (restaurants && restaurants.length>0) { %>
+    <div class="restaurants border-2 border-zinc-600 flex gap-10 p-10">
+      <% restaurants.forEach((data) => { %>
+      <div
+        class="restaurant flex flex-col border-2 border-zinc-600 p-10"
+        id="<%=data._id%>"
+      >
+        <h1 class="text-xl mt-5">
+          Name:<%=data.name%>
+        </h1>
+        <p class="text-xl mt-5">
+          location:<%=data.location%>
+        </p>
+        <p class="text-xl mt-5">cuisine :<%=data.cuisine%></p>
+        <p class="text-xl mt-5">capacity :<%=data.capacity%></p>
+        <a
+          href="/reservation/bookrestaurant/<%= data.id %>"
+          class="bg-blue-500 mt-10 p-5 rounded-md"
+          >Book Restaurant</a
+        >
+      </div>
+      <% }) %>
+    </div>
+    <% } else {%>
+    <div>
+      <h1 class="text-4xl">
+        No restaurants Found
+      </h1>
+    </div>
+    <%}%>
+    <script>
+        setTimeout(()=>{
+            const div=document.querySelector('.reservationSucessfull');
+            div.style.display="none"
+        },5000)
+    </script>
+  </body>
+</html>

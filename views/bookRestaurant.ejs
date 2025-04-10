@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full w-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Restaurant</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-zinc-800 h-full w-full text-white flex items-center justify-center flex-col">
+   
+        <h1 class="text-4xl uppercase mb-5">Book Restaurant</h1>
+    <div class="form">
+        <form action="/reservation/bookrestaurant/<%=restaurantId%>" method="post" class="border-2 border-zinc-600 rounded-md p-10 flex flex-col ">
+           
+            <label for="date">Enter date:</label>
+            <input type="date" required name="date" id="date" placeholder="date" class="mb-5 border-2 border-zinc-600 rounded-md px-3 py-4">
+            <label for="time">Enter time:</label>
+            <input type="time" required name="time" id="time" placeholder="password" class="mb-5 border-2 border-zinc-600 rounded-md px-3 py-4">
+            <input type="submit" value="Book Restaurant" class="mb-5   py-4 bg-blue-500 rounded-md mt-5">
+           
+          
+        </form> 
+    </div>
+</body>
+</html>
