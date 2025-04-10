@@ -1,7 +1,7 @@
 const restaurantModel=require('../models/restaurant.model')
 async function handleAdminLogin(req,res){
     let{username,password}=req.body;
-    if(username===process.env.ADMIN_USERNAME && password===process.env.ADMIN_PASSWORD){
+    if(username==='user@123' && password==="test@123"){
        res.render('admin',{added:false})
     }else{
         res.render('adminLogin',{wrongInfo:true})
