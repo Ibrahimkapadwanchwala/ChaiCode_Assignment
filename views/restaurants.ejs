@@ -32,7 +32,7 @@
         </div>
     <h1 class="text-4xl uppercase mt-10 font-bold">Restaurants page</h1>
     <% if (restaurants && restaurants.length>0) { %>
-    <div class="restaurants border-2 border-zinc-600 flex gap-10 p-10">
+    <div class="restaurants border-2 border-zinc-600 flex gap-10 p-10 flex-wrap">
       <% restaurants.forEach((data) => { %>
       <div
         class="restaurant flex flex-col border-2 border-zinc-600 p-10"
