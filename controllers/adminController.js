@@ -18,4 +18,8 @@ async function handleCreateRestaurant(req,res){
     })
     res.render("admin",{added:true})
 }
-module.exports={handleAdminLogin,handleCreateRestaurant}
+async function handleAdminLogout(req,res){
+    res.clearCookie('token');
+    res.redirect('/');
+}
+module.exports={handleAdminLogin,handleCreateRestaurant,handleAdminLogout}

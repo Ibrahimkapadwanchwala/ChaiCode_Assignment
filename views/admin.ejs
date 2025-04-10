@@ -14,7 +14,9 @@
       <% } %>
     <h1 class="text-4xl uppercase mb-10">Admin page</h1>
       <a href="/admin/addRestaurant" class="mt-10 bg-blue-500 py-3 px-3 rounded-md text-2xl mr-5">Add restaurants</a>
-      <a href="/admin/deleteRestaurant" class="mt-10 bg-blue-500 py-3 px-3 rounded-md text-2xl ml-5">Delete restaurants</a>
+   <form action="/admin/logout" method="post">
+    <input type="submit" value="Logout" class="text-2xl px-3 py-3 bg-red-600 rounded-md mt-15">
+   </form>
       <script>
         setTimeout(()=>{
             const div=document.querySelector('.alreadyExists');
