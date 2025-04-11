@@ -27,7 +27,7 @@ async function handleCreateCustomer(req, res) {
 }
 async function handleLoginCustomer(req,res){
   let{email,password}=req.body;
-  console.log(password)
+
 let user=await customerModel.findOne({email});
 if(user){
   bcrypt.compare(password,user.password,async (err,result)=>{
@@ -35,12 +35,12 @@ if(user){
       let token=jwt.sign({email:email},process.env.JWT_SECRET,{expiresIn:process.env.JWT_EXPIRES_IN})
           res.cookie('token',token)
           let restaurants=await restaurantModel.find();
-          console.log(restaurants);
+          
           
           res.render("restaurants",{restaurants,reservationSucessfull:false});
       
     }else{
-     res.render('login',{message:"email or password is incorrect",loginFirst:false})
+     res.render('login',{message:"email or password is incorrect",loginFirst:false,userDoesNotExist:false})
     }
     
   })
